@@ -1,0 +1,48 @@
+{
+  "name": "api",
+  "version": "0.0.39",
+  "description": "The API module of Lyfebloc Network bundler client",
+  "author": "Lyfebloc Network",
+  "homepage": "https://https://github.com/lyfebloc-network/nova#readme",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "lib/**/*.d.ts",
+    "lib/**/*.js",
+    "lib/**/*.js.map",
+    "*.d.ts",
+    "*.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://https://github.com/lyfebloc-network/nova.git"
+  },
+  "bugs": {
+    "url": "https://https://github.com/lyfebloc-network/nova/issues"
+  },
+  "scripts": {
+    "clean": "rm -rf lib && rm -f *.tsbuildinfo",
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "eslint --color --ext .ts src/ test/",
+    "lint:fix": "yarn run lint --fix",
+    "pretest": "yarn run check-types",
+    "test": "yarn test:unit",
+    "test:unit": "mocha 'test/unit/**/*.test.ts'",
+    "check-readme": "typescript-docs-verifier"
+  },
+  "dependencies": {
+    "@fastify/cors": "8.2.1",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.14.0",
+    "ethers": "5.7.2",
+    "executor": "^0.0.39",
+    "fastify": "4.14.1",
+    "pino": "8.11.0",
+    "pino-pretty": "10.0.0",
+    "reflect-metadata": "0.1.13",
+    "types": "^0.0.39"
+  },
+  "devDependencies": {
+    "@types/connect": "3.4.35"
+  }
+}
